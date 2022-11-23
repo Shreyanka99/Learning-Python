@@ -1,5 +1,6 @@
 # Number and emoji converter using dictionaries and functions
-def emoji_convertor(char):
+# defining a function
+def emoji_convertor(char):  # called function
     output = ""
     emoji = {
         "0": "zero",
@@ -14,13 +15,17 @@ def emoji_convertor(char):
         "9": "nine",
         ":)": "😀",
         ":(": "😥",
-        ":/": "😐"
+        ":/": "😐",
+        ";)": "😉"
     }
     for ch in char:
         output += " " + emoji.get(ch, ch)
+# returning necessary value to calling function
     return output
 
 
-message = (input("Enter message including text emojis and numbers:\n"))
+message = (input('''
+Enter message including text emojis and numbers which can include:
+:) or :/ or :( or ;) \n'''))
 message2 = message.split(" ")
-print(emoji_convertor(message2))
+print(emoji_convertor(message2))  # calling function
